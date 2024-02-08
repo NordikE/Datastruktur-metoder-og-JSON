@@ -9,7 +9,7 @@ console.log(peopleArrayWithObjects);
 const firstPerson = peopleArrayWithObjects[0];
 const lastPerson = peopleArrayWithObjects[4];
 
-console.log(firstPerson)
+console.log(firstPerson);
 console.log(lastPerson);
 
 
