@@ -46,3 +46,27 @@ console.log(hobbiesInCommon);
 
 // 1.6
 console.log("1.6");
+const allPeopleInfo = peopleArrayWithObjects.map((person) => {
+  return (
+    "name: " +
+    person.name +
+    ", age: " +
+    person.age +
+    ", email: " +
+    person.email +
+    ", country: " +
+    person.country +
+    ", hobbies: " +
+    person.hobbies
+  );
+});
+
+// const commonHobbiesWithAllPersons = peopleArrayWithObjects
+//   // code to filter the same person as you are comparing (as to not compare the same person with itself)
+//   .map((otherPerson) => ({
+//     name: otherPerson.name,
+//     hobbies: person.hobbies.filter((hobby) =>
+//       otherPerson.hobbies.includes(hobby)
+//     ),
+//     // code to filter out the results that are 0 in length
+//   }));
