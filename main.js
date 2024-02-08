@@ -6,6 +6,15 @@ console.log(peopleArrayWithObjects);
 
 // 1.1
 
-console.log(peopleArrayWithObjects[0]);
-console.log(peopleArrayWithObjects[4]);
+const firstPerson = peopleArrayWithObjects[0];
+const lastPerson = peopleArrayWithObjects[4];
+
+console.log(firstPerson)
+console.log(lastPerson);
+
+
+
+// 1.2
+
+let person = peopleArrayWithObjects.map;
 
