@@ -1,4 +1,4 @@
-import { peopleArrayWithObjects } from "./datastruktur-metoder_og_JSON.js" assert { type: "json" };
+import { peopleArrayWithObjects } from "./data.json" assert { type: "json" };
 
 // 1.0
 
