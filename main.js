@@ -70,6 +70,7 @@ allPeopleInfo.forEach((data) => {
   peopleWrapper.appendChild(personWrapper);
 });
 
+// 1.6
 console.log("1.6b");
 const hobbiesArrays = peopleArrayWithObjects.map((person) => person.hobbies);
 
@@ -88,8 +89,10 @@ commonHobbiesDiv.textContent = "Common Hobbies: " + commonHobbies.join(", ");
 
 commonHobbiesWrapper.appendChild(commonHobbiesDiv);
 
+//1.7
 console.log("1.7");
 
+// 2
 console.log("2");
 const randomArray = [];
 for (let i = 0; i < 10; i++) {
@@ -99,6 +102,7 @@ for (let i = 0; i < 10; i++) {
 
 console.log(randomArray);
 
+// 2.1
 console.log("2.1");
 const oddNumbers = [];
 const evenNumbers = [];
