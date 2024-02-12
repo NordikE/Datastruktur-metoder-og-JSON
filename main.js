@@ -45,7 +45,7 @@ const hobbiesInCommon = firstPersonHobbies.filter((hobby) =>
 console.log(hobbiesInCommon);
 
 // 1.6
-console.log("1.6");
+console.log("1.6a");
 const allPeopleInfo = peopleArrayWithObjects.map((person) => {
   return (
     "name: " +
@@ -61,12 +61,54 @@ const allPeopleInfo = peopleArrayWithObjects.map((person) => {
   );
 });
 
-// const commonHobbiesWithAllPersons = peopleArrayWithObjects
-//   // code to filter the same person as you are comparing (as to not compare the same person with itself)
-//   .map((otherPerson) => ({
-//     name: otherPerson.name,
-//     hobbies: person.hobbies.filter((hobby) =>
-//       otherPerson.hobbies.includes(hobby)
-//     ),
-//     // code to filter out the results that are 0 in length
-//   }));
+console.log(allPeopleInfo);
+const peopleWrapper = document.getElementById("people-wrapper");
+allPeopleInfo.forEach((data) => {
+  const personWrapper = document.createElement("div");
+  personWrapper.textContent = data;
+
+  peopleWrapper.appendChild(personWrapper);
+});
+
+console.log("1.6b");
+const hobbiesArrays = peopleArrayWithObjects.map((person) => person.hobbies);
+
+let commonHobbies = hobbiesArrays[0];
+
+for (let i = 1; i < hobbiesArrays.length; i++) {
+  const currentHobbies = hobbiesArrays[i];
+  commonHobbies = commonHobbies.filter((hobby) =>
+    currentHobbies.includes(hobby)
+  );
+}
+
+const commonHobbiesWrapper = document.getElementById("common-hobbies");
+const commonHobbiesDiv = document.createElement("div");
+commonHobbiesDiv.textContent = "Common Hobbies: " + commonHobbies.join(", ");
+
+commonHobbiesWrapper.appendChild(commonHobbiesDiv);
+
+console.log("1.7");
+
+console.log("2");
+const randomArray = [];
+for (let i = 0; i < 10; i++) {
+  const randomNumber = Math.floor(Math.random() * 100) + 1;
+  randomArray.push(randomNumber);
+}
+
+console.log(randomArray);
+
+console.log("2.1");
+const oddNumbers = [];
+const evenNumbers = [];
+randomArray.forEach((number) => {
+  if (number % 2 === 0) {
+    evenNumbers.push(number);
+  } else {
+    oddNumbers.push(number);
+  }
+});
+
+console.log("Odd numbers:", oddNumbers);
+console.log("Even numbers:", evenNumbers);
