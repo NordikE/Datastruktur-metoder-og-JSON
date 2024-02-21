@@ -96,23 +96,81 @@ console.log("1.7");
 console.log("2");
 const randomArray = [];
 for (let i = 0; i < 10; i++) {
-  const randomNumber = Math.floor(Math.random() * 100) + 1;
-  randomArray.push(randomNumber);
+  const randomNo = Math.floor(Math.random() * 100) + 1;
+  randomArray.push(randomNo);
 }
 
 console.log(randomArray);
 
 // 2.1
 console.log("2.1");
-const oddNumbers = [];
-const evenNumbers = [];
+const oddNos = [];
+const evenNos = [];
 randomArray.forEach((number) => {
   if (number % 2 === 0) {
-    evenNumbers.push(number);
+    evenNos.push(number);
   } else {
-    oddNumbers.push(number);
+    oddNos.push(number);
   }
 });
 
-console.log("Odd numbers:", oddNumbers);
-console.log("Even numbers:", evenNumbers);
+console.log("Odd numbers:", oddNos);
+console.log("Even numbers:", evenNos);
+
+// 2.2
+console.log("2.2");
+function findLargestNo(arr) {
+  return Math.max(...arr);
+}
+console.log("Largest Even Number:", findLargestNo(evenNos));
+console.log("Largest Odd Number:", findLargestNo(oddNos));
+
+// 2.3
+console.log("2.3");
+function sumArray(arr) {
+  return arr.reduce((acc, curr) => acc + curr, 0);
+}
+const sumEvenNos = sumArray(evenNos);
+const sumOddNos = sumArray(oddNos);
+console.log("Sum of Even Numbers:", sumEvenNos);
+console.log("Sum of Odd Numbers:", sumOddNos);
+
+// 2.4
+console.log("2.4");
+function compareSums(evenNos, oddNos) {
+  const sum1 = sumArray(evenNos);
+  const sum2 = sumArray(oddNos);
+  if (sum1 > sum2) {
+    return "Sum of Even Numbers is greater than Sum of Odd Numbers";
+  } else if (sum2 > sum1) {
+    return "Sum of Odd Numbers is greater than Sum of Even Numbers";
+  } else {
+    return "Sum of Even Numbers is equal to Sum of Odd Numbers";
+  }
+}
+
+// 2.5
+console.log("2.5");
+const oppgave2 = document.getElementById("oppgave2");
+oppgave2.innerHTML = `
+    <div id="originalArray">
+        <p>Random Array: ${randomArray}</p>
+    </div>
+    <div id="oddNumbers">
+        <p>Odd Numbers: ${oddNos}</p>
+    </div>
+    <div id="evenNumbers">
+        <p>Even Numbers: ${evenNos}</p>
+    </div>
+    <div id="largestNumber">
+        <p>Largest Number in Even Numbers Array: ${findLargestNo(evenNos)}</p>
+        <p>Largest Number in Odd Numbers Array: ${findLargestNo(oddNos)}</p>
+    </div>
+    <div id="sums">
+        <p>Sum of Even Numbers: ${sumEvenNos}</p>
+        <p>Sum of Odd Numbers: ${sumOddNos}</p>
+    </div>
+    <div id="comparison">
+        <p>${compareSums(evenNos, oddNos)}</p>
+    </div>
+`;
